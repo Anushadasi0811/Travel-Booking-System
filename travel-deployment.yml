@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: travel-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anu-app
+  template:
+    metadata:
+      labels:
+        app: anu-app
+    spec:
+      containers:
+      - name: travel
+        image: anusha552/travel:v1
+        ports:
+        - containerPort: 4000
