@@ -17,3 +17,6 @@ spec:
         image: anusha552/travel:v1
         ports:
         - containerPort: 4000
+        env:
+            - name: MONGO_URI
+              value: mongodb://mongo-svc:27017/sujitha
