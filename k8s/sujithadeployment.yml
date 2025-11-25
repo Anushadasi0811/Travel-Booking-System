@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sujitha-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anu-app
+  template:
+    metadata:
+      labels:
+        app: anu-app
+    spec:
+      containers:
+      - name: sujitha
+        image: anusha552/sujitha:v1
+        ports:
+        - containerPort: 3000
+        env:
+            - name: MONGO_URI
+              value: mongodb://mongo-svc:27017/sujitha
